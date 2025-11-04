@@ -79,7 +79,7 @@ export const projects: Project[] = [
     category: "dash",
     thumbnail: "/images/streamlit-dashboard.jpg",
     tech: ["Python", "Streamlit", "Pandas", "Matplotlib"],
-    github: "https://github.com/saloni/streamlit-dashboard",
+    github: "https://github.com/Salonii2004/Superstore_Dashboard",
     video: "https://youtu.be/UFcq8GY_36w",
     description:
       "An interactive dashboard that visualizes superstore sales and performance metrics using Streamlit.",
