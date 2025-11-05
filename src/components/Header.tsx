@@ -5,7 +5,7 @@ import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  
   const navigate = useNavigate();
 
   // ✅ Scroll to #projects section smoothly
@@ -52,12 +52,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="p-2 rounded-full bg-red-600 hover:bg-red-500 transition"
-        >
-          {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+        
 
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
