@@ -44,7 +44,7 @@ const Hero = () => (
       >
         <Link
           to="/contact"
-          className="bg-red-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-red-500 transition-all shadow-2xl flex items-center justify-center"
+          className="border-2 border-red-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-red-500 transition-all shadow-2xl flex items-center justify-center"
         >
           Get In Touch
         </Link>
