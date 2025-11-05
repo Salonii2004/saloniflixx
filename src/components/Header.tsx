@@ -1,26 +1,21 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
   const navigate = useNavigate();
 
-  // ✅ Scroll to #projects section smoothly
   const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if (window.location.pathname !== "/") {
-      // If not on home page, go there first, then scroll after short delay
       navigate("/");
       setTimeout(() => {
-        const section = document.querySelector("#projects");
-        section?.scrollIntoView({ behavior: "smooth" });
+        document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
       }, 400);
     } else {
-      const section = document.querySelector("#projects");
-      section?.scrollIntoView({ behavior: "smooth" });
+      document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -38,12 +33,9 @@ const Header = () => {
           <Link to="/" className="hover:text-red-400 transition">
             Home
           </Link>
-
-          {/* ✅ Fixed Project scroll */}
           <a href="#projects" onClick={handleProjectsClick} className="hover:text-red-400 transition">
             Projects
           </a>
-
           <Link to="/about" className="hover:text-red-400 transition">
             About
           </Link>
@@ -52,8 +44,17 @@ const Header = () => {
           </Link>
         </div>
 
-        
+        {/* 📄 Resume Button */}
+        <a
+          href="https://drive.google.com/file/d/1TV6fV62rji9kjNulrIeRw3U_HH3telML/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-full transition"
+        >
+          <Download size={18} /> Resume
+        </a>
 
+        {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -71,6 +72,14 @@ const Header = () => {
             <a href="#projects" onClick={handleProjectsClick} className="block hover:text-red-400">Projects</a>
             <Link to="/about" className="block hover:text-red-400">About</Link>
             <Link to="/contact" className="block hover:text-red-400">Contact</Link>
+            <a
+              href="https://drive.google.com/file/d/1TV6fV62rji9kjNulrIeRw3U_HH3telML/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-red-400"
+            >
+              Resume
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
