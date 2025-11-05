@@ -46,7 +46,7 @@ const Header = () => {
 
         {/* 📄 Resume Button */}
         <a
-          href="https://drive.google.com/file/d/1TV6fV62rji9kjNulrIeRw3U_HH3telML/view?usp=sharing"
+          href="https://drive.google.com/file/d/1pCirRVCtJal9fnx-Rq9Y_tOnBygU5QZg/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-full transition"
@@ -73,7 +73,7 @@ const Header = () => {
             <Link to="/about" className="block hover:text-red-400">About</Link>
             <Link to="/contact" className="block hover:text-red-400">Contact</Link>
             <a
-              href="https://drive.google.com/file/d/1TV6fV62rji9kjNulrIeRw3U_HH3telML/view?usp=sharing"
+              href="https://drive.google.com/file/d/1pCirRVCtJal9fnx-Rq9Y_tOnBygU5QZg/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="block hover:text-red-400"
