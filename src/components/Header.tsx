@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  // Smooth scroll to projects
   const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     if (window.location.pathname !== "/") {
@@ -20,16 +21,17 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md px-4 py-4">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-lg px-4 py-3 sm:py-4 shadow-lg">
       <nav className="max-w-7xl mx-auto flex justify-between items-center">
         <Link
           to="/"
-          className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent animate-glow"
+          className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-600 to-red-400 bg-clip-text text-transparent"
         >
           Saloni<span className="text-red-500">Flix</span>
         </Link>
 
-        <div className="hidden md:flex space-x-8">
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-8 text-lg font-medium">
           <Link to="/" className="hover:text-red-400 transition">
             Home
           </Link>
@@ -44,42 +46,40 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* 📄 Resume Button */}
-        <a
-          href="https://drive.google.com/file/d/1RmRKJLOcHFCk6KaO32rJ3Hf44l1yQTUW/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-full transition"
-        >
-          <Download size={18} /> Resume
-        </a>
-
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        {/* Mobile Menu Toggle */}
+        <button className="md:hidden p-2 text-gray-300" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </nav>
 
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 space-y-4 pb-4 px-4"
+            className="md:hidden mt-3 bg-black/90 rounded-xl py-4 space-y-3 text-center"
           >
-            <Link to="/" className="block hover:text-red-400">Home</Link>
-            <a href="#projects" onClick={handleProjectsClick} className="block hover:text-red-400">Projects</a>
-            <Link to="/about" className="block hover:text-red-400">About</Link>
-            <Link to="/contact" className="block hover:text-red-400">Contact</Link>
+            <Link onClick={() => setIsOpen(false)} to="/" className="block hover:text-red-400">
+              Home
+            </Link>
             <a
-              href="https://drive.google.com/file/d/1RmRKJLOcHFCk6KaO32rJ3Hf44l1yQTUW/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#projects"
+              onClick={(e) => {
+                handleProjectsClick(e);
+                setIsOpen(false);
+              }}
               className="block hover:text-red-400"
             >
-              Resume
+              Projects
             </a>
+            <Link onClick={() => setIsOpen(false)} to="/about" className="block hover:text-red-400">
+              About
+            </Link>
+            <Link onClick={() => setIsOpen(false)} to="/contact" className="block hover:text-red-400">
+              Contact
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
