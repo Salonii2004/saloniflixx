@@ -41,7 +41,7 @@ export const projects: Project[] = [
       "Ollama",
     ],
     github: "https://github.com/saloni/knowly",
-    video: "/videos/knowly-demo.mp4",
+    video: "https://youtu.be/-CMaOHgKgj0",
     description:
       "Knowly is an AI-powered document intelligence platform that allows users to upload, search, and interact with their documents through natural language. Built with React, Node.js, and PostgreSQL, it integrates Ollama’s local LLM inference with a Retrieval-Augmented Generation (RAG) pipeline to deliver precise, context-aware answers from uploaded PDFs and text files.",
     howItWorks:
