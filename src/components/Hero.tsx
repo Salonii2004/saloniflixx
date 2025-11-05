@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => (
   <section className="pt-32 pb-32 text-center px-4">
@@ -14,7 +15,7 @@ const Hero = () => (
       intelligent web apps
       <span className="text-red-500">.</span>
     </motion.h1>
-    
+
     <motion.p
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -23,7 +24,7 @@ const Hero = () => (
     >
       Turning ideas into code that <span className="text-red-400">tells a story</span>.
     </motion.p>
-    
+
     <div className="flex flex-col sm:flex-row gap-6 justify-center">
       <motion.a
         href="#projects"
@@ -34,15 +35,20 @@ const Hero = () => (
       >
         View Projects <ArrowRight className="ml-2" />
       </motion.a>
-      <motion.a
-        href="/contact"
+
+      {/* ✅ Fixed navigation using React Router Link */}
+      <motion.div
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.05 }}
-        className="border-2 border-red-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-red-600 transition-all"
       >
-        Get In Touch
-      </motion.a>
+        <Link
+          to="/contact"
+          className="border-2 border-red-600 px-12 py-6 rounded-full font-bold text-xl hover:bg-red-600 transition-all"
+        >
+          Get In Touch
+        </Link>
+      </motion.div>
     </div>
   </section>
 );
