@@ -5,6 +5,12 @@ import { Menu, X } from "lucide-react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = document.querySelector("#projects");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -24,7 +30,6 @@ const Header = () => {
             Projects
           </a>
 
-          {/* ⭐ NEW: Research Page Link */}
           <Link to="/research" className="hover:text-red-400 transition">
             Research
           </Link>
@@ -37,7 +42,6 @@ const Header = () => {
             Contact
           </Link>
 
-          {/* 📄 Resume Button (Desktop) */}
           <a
             href="https://drive.google.com/file/d/1IrbdO3xZ1DT2CcetCj7qf3COadOhd6y4/view?usp=drive_link"
             target="_blank"
@@ -60,7 +64,6 @@ const Header = () => {
       {/* 📱 Mobile Menu Drawer */}
       {isOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-xl text-center py-6 space-y-6">
-
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
@@ -71,13 +74,15 @@ const Header = () => {
 
           <a
             href="#projects"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              handleProjectsClick(e);
+              setIsOpen(false);
+            }}
             className="block text-lg hover:text-red-400 transition"
           >
             Projects
           </a>
 
-          {/* ⭐ NEW: Research Page Link (Mobile) */}
           <Link
             to="/research"
             onClick={() => setIsOpen(false)}
@@ -102,7 +107,6 @@ const Header = () => {
             Contact
           </Link>
 
-          {/* 📄 Resume Button (Mobile) */}
           <a
             href="https://drive.google.com/file/d/1IrbdO3xZ1DT2CcetCj7qf3COadOhd6y4/view?usp=drive_link"
             target="_blank"
