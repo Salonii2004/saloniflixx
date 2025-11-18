@@ -20,7 +20,7 @@ const Header = () => {
             Home
           </Link>
 
-          <a href="#projects" className="hover:text-red-400 transition">
+          <a href="projects" className="hover:text-red-400 transition">
             Projects
           </a>
 
