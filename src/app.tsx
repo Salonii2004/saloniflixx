@@ -40,6 +40,8 @@ function App() {
 
           {/* RESEARCH PAPER PAGE (NEW) */}
           <Route path="/research" element={<ResearchPaper />} />
+          <Route path="/#projects" element={<Projects />} />
+
 
           {/* FIX: Anchor-style routes ("/#projects") do not work in React Router */}
           {/* Instead, users should navigate via <Link to="/#projects"> or scroll logic */}
