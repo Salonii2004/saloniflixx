@@ -39,7 +39,7 @@ const Header = () => {
 
           {/* 📄 Resume Button (Desktop) */}
           <a
-            href="https://drive.google.com/file/d/1RmRKJLOcHFCk6KaO32rJ3Hf44l1yQTUW/view?usp=sharing"
+            href="https://drive.google.com/file/d/1IrbdO3xZ1DT2CcetCj7qf3COadOhd6y4/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-md"
@@ -104,7 +104,7 @@ const Header = () => {
 
           {/* 📄 Resume Button (Mobile) */}
           <a
-            href="https://drive.google.com/file/d/1RmRKJLOcHFCk6KaO32rJ3Hf44l1yQTUW/view?usp=sharing"
+            href="https://drive.google.com/file/d/1IrbdO3xZ1DT2CcetCj7qf3COadOhd6y4/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full font-semibold transition-all shadow-md"
